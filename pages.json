@@ -1,0 +1,30 @@
+{
+	"pages":[{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "首 页"
+		}
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "登 录"
+		}
+	}, {
+		"path": "pages/registe/registe",
+		"style": {
+			"navigationBarTitleText": "注 册"
+		}
+	},{
+		"path": "pages/registe/registeTest",
+		"style": {
+			"navigationBarTitleText": "注 册 2"
+		}
+	}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
