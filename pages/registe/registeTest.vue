@@ -16,24 +16,19 @@
 			
 			<uni-forms-item class="login_from_input">
 				<view class="login_from_name">确认密码</view>
-				<view class="login_from_fun"><input type="text" password="true" placeholder="请再次输入密码"></view>
+				<view class="login_from_fun"><input type="text" v-model="user.userPassword2" password="true" placeholder="请再次输入密码"></view>
 			</uni-forms-item>
 			
 			<uni-forms-item class="login_from_input" name="carId">
 				<view class="login_from_name">车牌号</view>
 				<view class="login_from_fun"><input type="text" v-model="user.carId" placeholder="请输入车牌号"></view>
 			</uni-forms-item>
-<!-- 			
-			<uni-forms-item class="login_from_input" v-for="(option, ind) in item.surveyQuestionOptionList" :key="ind">
-				<input :value="option.selectid" type="radio" :id="'option' + item.qid + option.selectid" :name="item.qid" :checked="ind == 0">
-				<label :for="'option' + item.qid + option.selectid">{{option.selection}}</label>
-			</uni-forms-item> -->
 
 			<uni-forms-item class="login_from_input"  name="userGender" >
 				<view class="login_from_name">性别</view>
 				<radio-group  style=" position: absolute;left: 25%;">
 					<label style="margin-right:20px;" >
-						<radio value="1"/><text>男</text>
+						<radio value="1" @click="gender" /><text>男</text>
 					</label>
 					<label >
 						<radio value="0"/><text>女</text>
@@ -59,39 +54,43 @@
 	   data() {
 	       return {
 	           user: {
-/* 	               userName: this.userName,
-	               userPassword: this.userPassword,
-				   carId:this.carId,
-				   userGender:this.userGender,
-				   userPhone:this.userPhone */
 				    userName: '',
 					userPassword: '',
+					userPassword2:'',
 					carId:'',
-					userGender:'',
+					userGender:0,
 					userPhone:'',
+					
 	           },
-	           // 密码登录校验规则
-/* 	           rules: {
-	               userName: {
-	                   rules: [{
-	                       required: true,
-	                       errorMessage: '请输入手机号码'
-	                   }]
-	               },
-	               pwd: {
-	                   rules: [{
-	                       required: true,
-	                       errorMessage: '请输入密码'
-	                   }]
-	               }
-	           }, */
 	       }
 	   },
-    onLoad(){
-     },
     methods: {
+		gender(){
+			this.user.userGender = 1;
+		},
 		formSubmit(e) {
 			console.log(this.user);
+			if (this.user.userPassword != this.user.userPassword2 ) {
+			    uni.showToast({
+			        icon: 'none',
+			        title: '两次输入密码不一致'
+			    });
+			    return;
+			}
+			if (!/^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1})$/.test(this.user.carId)) {
+			   uni.showToast({
+			       icon: 'error',
+			       title: '车牌号输入有误'
+			   });
+			   return;
+			}
+			if (!/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/.test(this.user.userPhone)) {
+			   uni.showToast({
+			       icon: 'error',
+			       title: '手机号输入有误'
+			   });
+			   return;
+			}
 			wx.request({
 				url: 'http://localhost:80/users',
 				method:'POST',
@@ -107,6 +106,9 @@
 					}else{
 						uni.showToast({ title: '注册失败', icon: 'error' });
 					}
+				},
+				fail(){  
+					uni.showToast({ title: '网络连接失败', icon: 'error' });
 				}
 			})
 		},

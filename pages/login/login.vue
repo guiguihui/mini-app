@@ -68,6 +68,9 @@
 						}else{
 							uni.showToast({ title: '帐号或密码错误', icon: 'error' });
 						}
+					},
+					fail(){
+						uni.showToast({ title: '网络连接失败', icon: 'error' });
 					}
 				})
 			},
@@ -75,7 +78,7 @@
 			reg() {
 				uni.showToast({ title: '注册跳转', icon: 'none' });
 				wx.redirectTo({
-				  url: '/pages/registe/registe'
+				  url: '/pages/registe/registeTest'
 				})
 			}
 		}

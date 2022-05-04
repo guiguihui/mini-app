@@ -152,7 +152,7 @@ var _default =
 {
   data: function data() {
     return {
-      title: 'Hello VSCode  。。' };
+      title: 'Hello World' };
 
   },
   onLoad: function onLoad() {

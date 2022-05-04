@@ -200,6 +200,9 @@ var _default =
           } else {
             uni.showToast({ title: '帐号或密码错误', icon: 'error' });
           }
+        },
+        fail: function fail() {
+          uni.showToast({ title: '网络连接失败', icon: 'error' });
         } });
 
     },
@@ -207,7 +210,7 @@ var _default =
     reg: function reg() {
       uni.showToast({ title: '注册跳转', icon: 'none' });
       wx.redirectTo({
-        url: '/pages/registe/registe' });
+        url: '/pages/registe/registeTest' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

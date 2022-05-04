@@ -14,7 +14,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello VSCode  。。'
+				title: 'Hello World'
 			}
 		},
 		onLoad() {
