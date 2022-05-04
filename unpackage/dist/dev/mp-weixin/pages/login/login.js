@@ -171,6 +171,8 @@ var _default =
   },
   onLoad: function onLoad() {},
   methods: {
+
+
     //当前登录按钮操作
     login: function login() {
       var that = this;
@@ -182,35 +184,53 @@ var _default =
         uni.showToast({ title: '请输入您的密码!', icon: 'none' });
         return;
       }
-
-      wx.request({
-        url: 'http://localhost:80/users/login',
-        data: {
-          id: this.id,
-          password: this.password },
-
+      var _this = this;
+      wx.getUserProfile({
+        desc: '用于完善会员资料', //这句话一定要填 不然直接报错
         success: function success(res) {
-          if (res.data) {
-            uni.showToast({ title: '登录成功 欢迎您', icon: 'success' });
-            setTimeout(function () {
-              wx.redirectTo({
-                url: '/pages/index/index' });
-
-            }, 800); //延迟时间 
-          } else {
-            uni.showToast({ title: '帐号或密码错误', icon: 'error' });
-          }
+          uni.setStorageSync('avatarUrl', res.userInfo.avatarUrl);
+          console.log(res.userInfo.avatarUrl);
         },
-        fail: function fail() {
-          uni.showToast({ title: '网络连接失败', icon: 'error' });
+        complete: function complete() {
+          //等用户同意授权之后再进行登录验证
+          wx.request({
+            url: 'http://localhost:80/users/login2',
+            data: {
+              id: _this.id,
+              password: _this.password },
+
+            success: function success(res) {
+              if (res.data) {
+                uni.showToast({ title: '登录成功 欢迎您', icon: 'success' });
+                uni.setStorage({
+                  key: 'user',
+                  data: res.data,
+                  success: function success() {
+
+                  } });
+
+                setTimeout(function () {
+                  wx.redirectTo({
+                    url: '/pages/mine/mineTest' });
+
+                }, 800); //延迟时间 
+              } else {
+                uni.showToast({ title: '帐号或密码错误', icon: 'error' });
+              }
+            },
+            fail: function fail() {
+              uni.showToast({ title: '网络连接失败', icon: 'error' });
+            } });
+
         } });
+
 
     },
     //注册按钮点击
     reg: function reg() {
       uni.showToast({ title: '注册跳转', icon: 'none' });
       wx.redirectTo({
-        url: '/pages/registe/registeTest' });
+        url: '/pages/registe/registe' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

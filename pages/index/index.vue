@@ -18,7 +18,12 @@
 			}
 		},
 		onLoad() {
-
+			uni.getStorage({
+				key: 'user',
+				success: function (res) {
+					console.log(res.data);
+				}
+			});
 		},
 		methods: {
 

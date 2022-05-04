@@ -11,7 +11,7 @@
 			"enablePullDownRefresh": false
 		}
 	},{
-		"path": "pages/registe/registeTest",
+		"path": "pages/registe/registe",
 		"style": {
 			"navigationBarTitleText": "注 册"
 		}
@@ -19,7 +19,14 @@
         "path" : "pages/mine/mine",
         "style" :                                                                                    
         {
-            "navigationBarTitleText": "个人中心",
+            "navigationBarTitleText": "个 人 中 心",
+            "enablePullDownRefresh": false
+        }    
+    },{
+        "path" : "pages/mine/mineTest",
+        "style" :                                                                                    
+        {
+            "navigationBarTitleText": "个人中心2",
             "enablePullDownRefresh": false
         }    
     }

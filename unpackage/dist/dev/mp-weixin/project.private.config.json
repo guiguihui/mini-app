@@ -25,14 +25,7 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/registe/registeTest",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/mine/mine",
+                    "pathName": "pages/mine/mineTest",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

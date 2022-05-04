@@ -70,6 +70,27 @@
 		},
 		formSubmit(e) {
 			console.log(this.user);
+			if (this.user.userName.length < 1 ) {
+			    uni.showToast({
+			        icon: 'none',
+			        title: '请输入姓名'
+			    });
+			    return;
+			}
+			if (this.user.userPassword.length < 1) {
+			    uni.showToast({
+			        icon: 'none',
+			        title: '请填写密码'
+			    });
+			    return;
+			}
+			if (this.user.userPassword2.length < 1) {
+			    uni.showToast({
+			        icon: 'none',
+			        title: '请确认密码'
+			    });
+			    return;
+			}
 			if (this.user.userPassword != this.user.userPassword2 ) {
 			    uni.showToast({
 			        icon: 'none',

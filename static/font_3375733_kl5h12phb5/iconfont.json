@@ -1,0 +1,86 @@
+{
+  "id": "3375733",
+  "name": "mini-app",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18267915",
+      "name": "订单",
+      "font_class": "dingdan",
+      "unicode": "e98d",
+      "unicode_decimal": 59789
+    },
+    {
+      "icon_id": "18267924",
+      "name": "技术服务",
+      "font_class": "jishufuwu",
+      "unicode": "e991",
+      "unicode_decimal": 59793
+    },
+    {
+      "icon_id": "18267926",
+      "name": "接口配置",
+      "font_class": "jiekoupeizhi",
+      "unicode": "e992",
+      "unicode_decimal": 59794
+    },
+    {
+      "icon_id": "18267933",
+      "name": "卖家购物车",
+      "font_class": "maijiagouwuche",
+      "unicode": "e993",
+      "unicode_decimal": 59795
+    },
+    {
+      "icon_id": "18267936",
+      "name": "卖家店铺",
+      "font_class": "maijiadianpu",
+      "unicode": "e994",
+      "unicode_decimal": 59796
+    },
+    {
+      "icon_id": "18267950",
+      "name": "身份认证",
+      "font_class": "shenfenrenzheng",
+      "unicode": "e996",
+      "unicode_decimal": 59798
+    },
+    {
+      "icon_id": "18267962",
+      "name": "物流",
+      "font_class": "wuliu",
+      "unicode": "e999",
+      "unicode_decimal": 59801
+    },
+    {
+      "icon_id": "18267970",
+      "name": "隐私保护",
+      "font_class": "yinsibaohu",
+      "unicode": "e99b",
+      "unicode_decimal": 59803
+    },
+    {
+      "icon_id": "19410758",
+      "name": "用户",
+      "font_class": "user",
+      "unicode": "e99e",
+      "unicode_decimal": 59806
+    },
+    {
+      "icon_id": "18267920",
+      "name": "合同",
+      "font_class": "hetong",
+      "unicode": "e98f",
+      "unicode_decimal": 59791
+    },
+    {
+      "icon_id": "18267921",
+      "name": "海关港口",
+      "font_class": "haiguangangkou",
+      "unicode": "e990",
+      "unicode_decimal": 59792
+    }
+  ]
+}

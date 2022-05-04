@@ -2,8 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/login/login",
-    "pages/registe/registeTest",
-    "pages/mine/mine"
+    "pages/registe/registe",
+    "pages/mine/mine",
+    "pages/mine/mineTest"
   ],
   "subPackages": [],
   "window": {
