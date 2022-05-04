@@ -28,7 +28,7 @@
 				<view class="label" v-for="(row,index) in orderTypeLise" :key="row.name" hover-class="hover" @tap="toOrderType(index)">
 					<view class="icon">
 						<view class="badge" v-if="row.badge>0">{{row.badge}}</view>
-						<!-- <image :src="'../../static/HM-PersonalCenter/'+row.icon"></image> -->
+						<image :src="'../../static/'+row.icon"></image>
 					</view>
 					{{row.name}}
 				</view>
@@ -39,10 +39,10 @@
 			<view class="li" v-for="(li,li_i) in list" @tap="toPage(list_i,li_i)" v-bind:class="{'noborder':li_i==list.length-1}"
 			 hover-class="hover" :key="li.name">
 				<view class="icon">
-					<!-- <image :src="'../../static/HM-PersonalCenter/sever/'+li.icon"></image> -->
+					<image :src="'../../static/'+li.icon"></image>
 				</view>
 				<view class="text">{{li.name}}</view>
-				<!-- <image class="to" src="../../static/HM-PersonalCenter/to.png"></image> -->
+				<image :src="'../../static/'+to.icon"></image>
 			</view>
 		</view>
 		
@@ -62,41 +62,43 @@
 				userinfo: {},
 				avatarUrl:"../../static/logo.png",
 				orderTypeLise: [
-					//name-标题 icon-图标 badge-角标
+					
 					{
 						name: '我的订单',
-						icon: 'l1.png',
+						icon: 'dingdan.png',
 						badge: '',
 						index: "0"
 					},
 					{
-						name: '待付款',
-						icon: 'l2.png',
+						name: '预定',
+						icon: 'yuding.png',
 						badge: '',
 						index: "1"
 					}
 				],
 				severList: [
 					[{
-							name: '详细信息',
-							icon: 'locked-filled',
+							name: '个人信息',
+							icon: 'geren.png',
 							url: null
 						},
 						{
-							name: '全部订单',
-							icon: '<uni-icons type="wallet" size="30"></uni-icons>',
+							name: '我的车辆',
+							icon: 'cheliang.png',
 							index: "0",
-							url: "/pages/order/order_page"
+							url: null
+							//url: "/pages/order/order_page"
 						},
 					],
 					[{
 							name: '修改密码',
-							icon: 'security.png',
-							url: "/pages/login/reg"
+							icon: 'mima.png',
+							url: null
+							//url: "/pages/login/reg"
 						},
 						{
 							name: '关于',
-							icon: 'kefu.png',
+							icon: 'guanyu.png',
 							url: null
 						}
 					]
