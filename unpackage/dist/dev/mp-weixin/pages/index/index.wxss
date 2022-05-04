@@ -21,4 +21,17 @@
 	font-size: 36rpx;
 	color: #8f8f94;
 }
+.icon-40{
+  width: 40rpx;
+  height: 40rpx
+}
+.fix-user{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx 0 0 100rpx;
+  position: fixed;
+  top: 120rpx;
+  right: 0rpx;
+  background-color: #fff;
+}
 

@@ -1,1 +1,1 @@
-<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view></view>
+<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view><navigator class="fix-user shadow panel-center item-center" url="/pages/login/login"><image class="icon-40" src="/static/logo.png"></image></navigator></view>

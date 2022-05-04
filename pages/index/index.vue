@@ -4,6 +4,9 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<navigator class="fix-user shadow panel-center item-center" url="/pages/login/login">
+		  <image src="/static/logo.png" class="icon-40"></image>
+		</navigator>
 	</view>
 </template>
 
@@ -11,7 +14,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello VSCode'
+				title: 'Hello VSCode  。。'
 			}
 		},
 		onLoad() {
@@ -48,5 +51,20 @@
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
+	}
+	
+	.icon-40{
+	  width: 40rpx;
+	  height: 40rpx
+	}
+	
+	.fix-user{
+	  width: 100rpx;
+	  height: 100rpx;
+	  border-radius: 100rpx 0 0 100rpx;
+	  position: fixed;
+	  top: 120rpx;
+	  right: 0rpx;
+	  background-color: #fff;
 	}
 </style>

@@ -40,8 +40,11 @@
 	            </view>
 				
 	            <button form-type="submit">注 册</button>  
-	        </form>  
+	        </form>
+			
+	
 	    </view>  
+		
 </template>
 
 
@@ -134,5 +137,5 @@
 </script>
 
 <style>
-	
+
 </style>
