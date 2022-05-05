@@ -80,7 +80,7 @@
 					[{
 							name: '个人信息',
 							icon: 'geren.png',
-							url: null
+							url: "/pages/mine/userInfo/userInfo"
 						},
 						{
 							name: '我的车辆',
@@ -108,24 +108,16 @@
 		onLoad() {
 			//加载
 			this.init();
-			console.log("load")
 			this.avatarUrl = uni.getStorageSync('avatarUrl');
 		},
 		onShow() {
 			if(!this.login){
 				this.init();
-				console.log("show")
 			}
-			//this.avatarUrl = uni.getStorageSync('avatarUrl');
 		},
 		methods: {
 			init() {
-				//this.avatarUrl = uni.getStorageSync('avatarUrl');
 				var _this = this;
-				//_this.methods.getUserProfile.bind(_this)();
-				//this.$options.methods.getUserProfile.bind(this)();
-				
-
 				uni.getStorage({
 					key: 'user',
 					success: function (res) {

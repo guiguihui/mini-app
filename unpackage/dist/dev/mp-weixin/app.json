@@ -4,7 +4,11 @@
     "pages/login/login",
     "pages/registe/registe",
     "pages/mine/mine",
-    "pages/mine/mineTest"
+    "pages/mine/mineTest",
+    "pages/bills/bills",
+    "pages/reserve/reserve",
+    "pages/mine/userInfo/userInfo",
+    "pages/mine/changePassword/changePassword"
   ],
   "subPackages": [],
   "window": {

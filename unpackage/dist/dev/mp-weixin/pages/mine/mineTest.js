@@ -212,7 +212,7 @@ var _default =
       [{
         name: '个人信息',
         icon: 'geren.png',
-        url: null },
+        url: "/pages/mine/userInfo/userInfo" },
 
       {
         name: '我的车辆',
@@ -240,24 +240,16 @@ var _default =
   onLoad: function onLoad() {
     //加载
     this.init();
-    console.log("load");
     this.avatarUrl = uni.getStorageSync('avatarUrl');
   },
   onShow: function onShow() {
     if (!this.login) {
       this.init();
-      console.log("show");
     }
-    //this.avatarUrl = uni.getStorageSync('avatarUrl');
   },
   methods: {
     init: function init() {
-      //this.avatarUrl = uni.getStorageSync('avatarUrl');
       var _this = this;
-      //_this.methods.getUserProfile.bind(_this)();
-      //this.$options.methods.getUserProfile.bind(this)();
-
-
       uni.getStorage({
         key: 'user',
         success: function success(res) {

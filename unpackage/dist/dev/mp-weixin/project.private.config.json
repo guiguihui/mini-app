@@ -29,6 +29,27 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/reserve/reserve",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/mine/changePassword/changePassword",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/mine/userInfo/userInfo",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

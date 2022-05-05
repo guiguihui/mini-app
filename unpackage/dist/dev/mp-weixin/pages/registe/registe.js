@@ -194,7 +194,6 @@ var _default =
         userPhone: '' } };
 
 
-
   },
   methods: {
     gender: function gender() {
