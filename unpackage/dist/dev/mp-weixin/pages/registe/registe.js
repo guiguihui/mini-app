@@ -181,6 +181,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -229,14 +230,17 @@ var _default =
 
         return;
       }
-      if (!/^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1})$/.test(this.user.carId)) {
+      if (!
+      /^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1})$/.
+      test(this.user.carId)) {
         uni.showToast({
           icon: 'error',
           title: '车牌号输入有误' });
 
         return;
       }
-      if (!/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/.test(this.user.userPhone)) {
+      if (!/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/.test(this.user.
+      userPhone)) {
         uni.showToast({
           icon: 'error',
           title: '手机号输入有误' });
@@ -249,18 +253,27 @@ var _default =
         data: this.user,
         success: function success(res) {
           if (res.data) {
-            uni.showToast({ title: '注册成功', icon: 'success' });
+            uni.showToast({
+              title: '注册成功',
+              icon: 'success' });
+
             /* setTimeout(function () {
-                                                                   wx.redirectTo({
-                                                                     url: '/pages/index/index'
-                                                                   })
-                                                               }, 800) //延迟时间 */
+                                      wx.redirectTo({
+                                        url: '/pages/index/index'
+                                      })
+                                  }, 800) //延迟时间 */
           } else {
-            uni.showToast({ title: '注册失败', icon: 'error' });
+            uni.showToast({
+              title: '注册失败',
+              icon: 'error' });
+
           }
         },
         fail: function fail() {
-          uni.showToast({ title: '网络连接失败', icon: 'error' });
+          uni.showToast({
+            title: '网络连接失败',
+            icon: 'error' });
+
         } });
 
     } } };exports.default = _default;

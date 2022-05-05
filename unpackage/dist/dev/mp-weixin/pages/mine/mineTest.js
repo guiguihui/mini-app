@@ -225,9 +225,8 @@ var _default =
       [{
         name: '修改密码',
         icon: 'mima.png',
-        url: null
-        //url: "/pages/login/reg"
-      },
+        url: "/pages/mine/changePassword/changePassword" },
+
       {
         name: '关于',
         icon: 'guanyu.png',
