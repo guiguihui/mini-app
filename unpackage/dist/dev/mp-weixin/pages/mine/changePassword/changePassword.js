@@ -233,6 +233,13 @@ var _default =
 
         return;
       }
+      if (this.newPassword == this.oldPassword) {
+        uni.showToast({
+          icon: 'none',
+          title: '新旧密码一致' });
+
+        return;
+      }
       if (this.newPassword != this.newPassword2) {
         uni.showToast({
           icon: 'none',
