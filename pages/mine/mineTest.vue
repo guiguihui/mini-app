@@ -10,7 +10,7 @@
 					<view class="integral">手机号码:{{userinfo.userPhone}}</view>
 				</view>
 			</view>
-			
+
 			<view class="userinfo" v-else>
 				<view class="face">
 					<image src="../../static/logo.png"></image>
@@ -22,10 +22,11 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<view class="orders">
 			<view class="box">
-				<view class="label" v-for="(row,index) in orderTypeLise" :key="row.name" hover-class="hover" @tap="toOrderType(index)">
+				<view class="label" v-for="(row,index) in orderTypeLise" :key="row.name" hover-class="hover"
+					@tap="toOrderType(index)">
 					<view class="icon">
 						<view class="badge" v-if="row.badge>0">{{row.badge}}</view>
 						<image :src="'../../static/'+row.icon"></image>
@@ -34,10 +35,10 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<view class="list" v-for="(list,list_i) in severList" :key="list_i">
-			<view class="li" v-for="(li,li_i) in list" @tap="toPage(list_i,li_i)" v-bind:class="{'noborder':li_i==list.length-1}"
-			 hover-class="hover" :key="li.name">
+			<view class="li" v-for="(li,li_i) in list" @tap="toPage(list_i,li_i)"
+				v-bind:class="{'noborder':li_i==list.length-1}" hover-class="hover" :key="li.name">
 				<view class="icon">
 					<image :src="'../../static/'+li.icon"></image>
 				</view>
@@ -45,25 +46,22 @@
 				<image :src="'../../static/'+to.icon"></image>
 			</view>
 		</view>
-		
+
 	</view>
 </template>
 
 
 
 <script>
-
 	export default {
-		
+
 		data() {
 			return {
 				isH5Plus: true,
 				login: false,
 				userinfo: {},
-				avatarUrl:"../../static/logo.png",
-				orderTypeLise: [
-					
-					{
+				avatarUrl: "../../static/logo.png",
+				orderTypeLise: [{
 						name: '我的订单',
 						icon: 'dingdan.png',
 						badge: '',
@@ -85,9 +83,7 @@
 						{
 							name: '我的车辆',
 							icon: 'cheliang.png',
-							index: "0",
-							url: null
-							//url: "/pages/order/order_page"
+							url: "/pages/mine/changePlate/changePlate"
 						},
 					],
 					[{
@@ -98,7 +94,7 @@
 						{
 							name: '关于',
 							icon: 'guanyu.png',
-							url: null
+							url: "/pages/mine/about/about"
 						}
 					]
 				],
@@ -110,7 +106,7 @@
 			this.avatarUrl = uni.getStorageSync('avatarUrl');
 		},
 		onShow() {
-			if(!this.login){
+			if (!this.login) {
 				this.init();
 			}
 		},
@@ -119,20 +115,26 @@
 				var _this = this;
 				uni.getStorage({
 					key: 'user',
-					success: function (res) {
+					success: function(res) {
 						_this.login = true;
 						_this.userinfo = res.data;
 					}
 				});
-
 			},
 			//用户点击订单类型
 			toOrderType(index) {
 				uni.setStorageSync('order_index', this.orderTypeLise[index].index);
 				console.log(uni.getStorageSync('order_index'));
-				uni.switchTab({
-					url: "/pages/order/order_page"
-				})
+				if(uni.getStorageSync('order_index')  == 0){
+					uni.navigateTo({
+						url: "/pages/mine/bills/bills"
+					})
+				}else{
+					uni.navigateTo({
+						url: "/pages/mine/registe/registe"
+					})
+				}
+				
 			},
 			//用户点击列表项
 			toPage(list_i, li_i) {
@@ -144,9 +146,10 @@
 					uni.navigateTo({
 						url: this.severList[list_i][li_i].url
 					})
-				}
-				else{
-					uni.showToast({title: "该功能暂未开放"});
+				} else {
+					uni.showToast({
+						title: "该功能暂未开放"
+					});
 				}
 			}
 		}

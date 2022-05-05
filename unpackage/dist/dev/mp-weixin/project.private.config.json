@@ -32,21 +32,14 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/reserve/reserve",
+                    "pathName": "pages/mine/bills/bills",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
                 },
                 {
                     "name": "",
-                    "pathName": "pages/mine/changePassword/changePassword",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/mine/userInfo/userInfo",
+                    "pathName": "pages/mine/reserve/reserve",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

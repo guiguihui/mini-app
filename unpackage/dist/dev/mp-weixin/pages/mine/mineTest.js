@@ -183,8 +183,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
-
 {
 
   data: function data() {
@@ -193,9 +193,7 @@ var _default =
       login: false,
       userinfo: {},
       avatarUrl: "../../static/logo.png",
-      orderTypeLise: [
-
-      {
+      orderTypeLise: [{
         name: '我的订单',
         icon: 'dingdan.png',
         badge: '',
@@ -217,10 +215,8 @@ var _default =
       {
         name: '我的车辆',
         icon: 'cheliang.png',
-        index: "0",
-        url: null
-        //url: "/pages/order/order_page"
-      }],
+        url: "/pages/mine/changePlate/changePlate" }],
+
 
       [{
         name: '修改密码',
@@ -230,7 +226,7 @@ var _default =
       {
         name: '关于',
         icon: 'guanyu.png',
-        url: null }]] };
+        url: "/pages/mine/about/about" }]] };
 
 
 
@@ -256,14 +252,20 @@ var _default =
           _this.userinfo = res.data;
         } });
 
-
     },
     //用户点击订单类型
     toOrderType: function toOrderType(index) {
       uni.setStorageSync('order_index', this.orderTypeLise[index].index);
       console.log(uni.getStorageSync('order_index'));
-      uni.switchTab({
-        url: "/pages/order/order_page" });
+      if (uni.getStorageSync('order_index') == 0) {
+        uni.navigateTo({
+          url: "/pages/mine/bills/bills" });
+
+      } else {
+        uni.navigateTo({
+          url: "/pages/mine/registe/registe" });
+
+      }
 
     },
     //用户点击列表项
@@ -276,9 +278,10 @@ var _default =
         uni.navigateTo({
           url: this.severList[list_i][li_i].url });
 
-      } else
-      {
-        uni.showToast({ title: "该功能暂未开放" });
+      } else {
+        uni.showToast({
+          title: "该功能暂未开放" });
+
       }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

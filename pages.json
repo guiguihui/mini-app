@@ -1,5 +1,5 @@
 {
-	"pages":[{
+	"pages": [{
 		"path": "pages/index/index",
 		"style": {
 			"navigationBarTitleText": "首 页"
@@ -10,28 +10,53 @@
 			"navigationBarTitleText": "登 录",
 			"enablePullDownRefresh": false
 		}
-	},{
+	}, {
 		"path": "pages/registe/registe",
 		"style": {
 			"navigationBarTitleText": "注 册"
 		}
-	},{
-        "path" : "pages/mine/mine",
-        "style" :                                                                                    
-        {
-            "navigationBarTitleText": "个 人 中 心",
-            "enablePullDownRefresh": false
-        }    
-    },{
-        "path" : "pages/mine/mineTest",
-        "style" :                                                                                    
-        {
-            "navigationBarTitleText": "个人中心2",
-            "enablePullDownRefresh": false
-        }    
-    }
-        ,{
-            "path" : "pages/bills/bills",
+	}, {
+		"path": "pages/mine/mine",
+		"style": {
+			"navigationBarTitleText": "个 人 中 心",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/mine/mineTest",
+		"style": {
+			"navigationBarTitleText": "个 人 中 心",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/mine/userInfo/userInfo",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/mine/changePassword/changePassword",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/mine/changePlate/changePlate",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/mine/about/about",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}    ,{
+            "path" : "pages/mine/bills/bills",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -40,25 +65,7 @@
             
         }
         ,{
-            "path" : "pages/reserve/reserve",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/mine/userInfo/userInfo",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/mine/changePassword/changePassword",
+            "path" : "pages/mine/reserve/reserve",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

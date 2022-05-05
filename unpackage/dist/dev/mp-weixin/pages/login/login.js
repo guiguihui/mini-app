@@ -161,6 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -177,11 +178,17 @@ var _default =
     login: function login() {
       var that = this;
       if (!that.id) {
-        uni.showToast({ title: '请输入您的帐号!', icon: 'none' });
+        uni.showToast({
+          title: '请输入您的帐号!',
+          icon: 'none' });
+
         return;
       }
       if (!that.password) {
-        uni.showToast({ title: '请输入您的密码!', icon: 'none' });
+        uni.showToast({
+          title: '请输入您的密码!',
+          icon: 'none' });
+
         return;
       }
       var _this = this;
@@ -201,7 +208,10 @@ var _default =
 
             success: function success(res) {
               if (res.data) {
-                uni.showToast({ title: '登录成功 欢迎您', icon: 'success' });
+                uni.showToast({
+                  title: '登录成功 欢迎您',
+                  icon: 'success' });
+
                 uni.setStorage({
                   key: 'user',
                   data: res.data,
@@ -215,11 +225,17 @@ var _default =
 
                 }, 800); //延迟时间 
               } else {
-                uni.showToast({ title: '帐号或密码错误', icon: 'error' });
+                uni.showToast({
+                  title: '帐号或密码错误',
+                  icon: 'error' });
+
               }
             },
             fail: function fail() {
-              uni.showToast({ title: '网络连接失败', icon: 'error' });
+              uni.showToast({
+                title: '网络连接失败',
+                icon: 'error' });
+
             } });
 
         } });
@@ -228,7 +244,10 @@ var _default =
     },
     //注册按钮点击
     reg: function reg() {
-      uni.showToast({ title: '注册跳转', icon: 'none' });
+      uni.showToast({
+        title: '注册跳转',
+        icon: 'none' });
+
       wx.redirectTo({
         url: '/pages/registe/registe' });
 

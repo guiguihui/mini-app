@@ -261,7 +261,6 @@ var _default =
           } });
 
       }
-
     },
     //用户点击订单类型
     toOrderType: function toOrderType(index) {
