@@ -1,0 +1,1 @@
+<map style="width:{{mapWidth }}rpx;height:{{mapHeight}}rpx;" markers="{{markers}}" include-points="{{markers}}"></map>

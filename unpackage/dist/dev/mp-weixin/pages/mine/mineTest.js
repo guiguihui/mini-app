@@ -263,7 +263,7 @@ var _default =
 
       } else {
         uni.navigateTo({
-          url: "/pages/mine/registe/registe" });
+          url: "/pages/mine/reserve/reserve" });
 
       }
 

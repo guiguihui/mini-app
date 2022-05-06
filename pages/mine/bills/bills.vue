@@ -3,21 +3,23 @@
 		<scroll-view class="list-scroll-content" scroll-y>
 			<!-- 订单列表 -->
 			<view v-for="(item,index) in bills" :key="index" class="order-item">
-				<!-- @click="toOrder(item)" -->
-				<uni-card class="uni-card" :title="bills[index].parkingId"
-					:extra="bills[index].reserveFee + bills[index].billFee">
+				<uni-card class="uni-card" :title="items[index]">
+
 					<view class="uni-body">
 						<text class="uni-title">订单编号</text>
 						<text class="uni-data">{{bills[index].billId}}</text>
 					</view>
+
 					<view class="uni-body">
 						<text class="uni-title">预订编号</text>
 						<text class="uni-data">{{bills[index].reserveId}}</text>
 					</view>
+
 					<view class="uni-body">
 						<text class="uni-title">停车位编号</text>
 						<text class="uni-data">{{bills[index].spaceId}}</text>
 					</view>
+
 					<view class="uni-body">
 						<text class="uni-title">车牌号</text>
 						<text class="uni-data">{{bills[index].carId}}</text>
@@ -38,6 +40,10 @@
 						<text class="uni-title">停车费用</text>
 						<text class="uni-data">{{bills[index].billFee}}</text>
 					</view>
+					<view class="uni-body">
+						<text class="uni-title">总费用</text>
+						<text class="uni-data">{{bills[index].reserveFee + bills[index].billFee}}</text>
+					</view>
 				</uni-card>
 			</view>
 
@@ -51,9 +57,7 @@
 	export default {
 		data() {
 			return {
-				//array:[],
 				items: [],
-				items2:[],
 				userinfo: {},
 				bills: {},
 			}
@@ -66,6 +70,7 @@
 			this.init();
 		},
 		methods: {
+			/*用来转化时间的函数*/
 			getTime: function(time) {
 				var date = new Date(time),
 					year = date.getFullYear(),
@@ -91,23 +96,18 @@
 									for (var i = 0; i < res.data.length; i++) {
 										res.data[i].billStart = _this.getTime(res.data[i].billStart);
 										res.data[i].billEnd = _this.getTime(res.data[i].billEnd);
-										/* wx.request({
-											url: 'http://localhost:80/parkings/' + res.data[i].parkingId,
+										wx.request({
+											url: 'http://localhost:80/parkings/' + res.data[i]
+												.parkingId,
 											success(res) {
 												if (res.data) {
-													_this.items.push(res.data.data.parkingName);
-													var array = JSON.parse(JSON.stringify(_this.items))
-													//console.log(_this.bills[0].parkingId)
-													//console.log(array)
-													//_this.parkingName = res.data.data.parkingName
-													//console.log(i)
-													// console.log(j)
-													//_this.bills[i].parkingId = res.data.data.parkingName;
+													_this.items.push(res.data.data
+														.parkingName);
+													var items2 = JSON.parse(JSON.stringify(
+														_this.items))
 												}
 											}
-										}) */
-										// console.log(_this.bills[0]) 
-										//_this.bills[i].parkingId = _this.items.pop();
+										})
 									}
 									_this.bills = res.data;
 								}
@@ -119,8 +119,6 @@
 								});
 							}
 						})
-
-
 					},
 					fail() {
 						uni.showToast({
@@ -137,6 +135,15 @@
 </script>
 
 <style lang="scss">
+/* 	.order-item {
+		color: aqua;
+	}
+ */
+	.uni-title {
+		display: inline-block;
+	}
 
-
+	.uni-data {
+		float: right;
+	}
 </style>

@@ -10,7 +10,8 @@
     "pages/mine/changePlate/changePlate",
     "pages/mine/about/about",
     "pages/mine/bills/bills",
-    "pages/mine/reserve/reserve"
+    "pages/mine/reserve/reserve",
+    "pages/map/map"
   ],
   "subPackages": [],
   "window": {

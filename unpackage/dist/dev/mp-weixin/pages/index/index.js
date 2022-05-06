@@ -159,7 +159,7 @@ var _default =
     uni.getStorage({
       key: 'user',
       success: function success(res) {
-        console.log(res.data);
+        //console.log(res.data);
       } });
 
   },
