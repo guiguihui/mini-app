@@ -91,6 +91,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uniCard: function() {
+      return __webpack_require__.e(/*! import() | components/uni-card/uni-card */ "components/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @/components/uni-card/uni-card.vue */ 94))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -128,42 +151,118 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uCard = function uCard() {__webpack_require__.e(/*! require.ensure | components/uni-card/uni-card */ "components/uni-card/uni-card").then((function () {return resolve(__webpack_require__(/*! @/components/uni-card/uni-card.vue */ 94));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
-      userinfo: {} };
+      //array:[],
+      items: [],
+      items2: [],
+      userinfo: {},
+      bills: {} };
 
   },
+
+  components: {
+    uCard: uCard },
+
   onLoad: function onLoad() {
-    //加载
     this.init();
-    console.log("load");
   },
   methods: {
+    getTime: function getTime(time) {
+      var date = new Date(time),
+      year = date.getFullYear(),
+      month = date.getMonth() + 1,
+      day = date.getDate(),
+      hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
+      minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
+      second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+      month >= 1 && month <= 9 ? month = "0" + month : "";
+      day >= 0 && day <= 9 ? day = "0" + day : "";
+      var timer = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+      return timer;
+    },
     init: function init() {
       var _this = this;
       uni.getStorage({
         key: 'user',
         success: function success(res) {
-          _this.userinfo = res.data;
           wx.request({
             url: 'http://localhost:80/bills/car/' + res.data.carId,
-            data: {},
-
-
             success: function success(res) {
               if (res.data) {
-                console.log(res.data);
+                for (var i = 0; i < res.data.length; i++) {
+                  res.data[i].billStart = _this.getTime(res.data[i].billStart);
+                  res.data[i].billEnd = _this.getTime(res.data[i].billEnd);
+                  /* wx.request({
+                                                                            	url: 'http://localhost:80/parkings/' + res.data[i].parkingId,
+                                                                            	success(res) {
+                                                                            		if (res.data) {
+                                                                            			_this.items.push(res.data.data.parkingName);
+                                                                            			var array = JSON.parse(JSON.stringify(_this.items))
+                                                                            			//console.log(_this.bills[0].parkingId)
+                                                                            			//console.log(array)
+                                                                            			//_this.parkingName = res.data.data.parkingName
+                                                                            			//console.log(i)
+                                                                            			// console.log(j)
+                                                                            			//_this.bills[i].parkingId = res.data.data.parkingName;
+                                                                            		}
+                                                                            	}
+                                                                            }) */
+                  // console.log(_this.bills[0]) 
+                  //_this.bills[i].parkingId = _this.items.pop();
+                }
+                _this.bills = res.data;
               }
             },
             fail: function fail() {
@@ -172,6 +271,7 @@ var _default =
                 icon: 'error' });
 
             } });
+
 
 
         },
