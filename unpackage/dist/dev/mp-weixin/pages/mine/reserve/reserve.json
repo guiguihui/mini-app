@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "预 定",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "uni-card": "/components/uni-card/uni-card",

@@ -18,7 +18,7 @@
 	}, {
 		"path": "pages/mine/mine",
 		"style": {
-			"navigationBarTitleText": "个 人 中 心",
+			"navigationBarTitleText": "个 人 中 心 （弃用）",
 			"enablePullDownRefresh": false
 		}
 	}, {
@@ -30,21 +30,21 @@
 	}, {
 		"path": "pages/mine/userInfo/userInfo",
 		"style": {
-			"navigationBarTitleText": "",
+			"navigationBarTitleText": "修 改 个 人 信 息",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/mine/changePassword/changePassword",
 		"style": {
-			"navigationBarTitleText": "",
+			"navigationBarTitleText": "修 改 密 码",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/mine/changePlate/changePlate",
 		"style": {
-			"navigationBarTitleText": "",
+			"navigationBarTitleText": "修 改 车 牌",
 			"enablePullDownRefresh": false
 		}
 
@@ -55,34 +55,27 @@
 			"enablePullDownRefresh": false
 		}
 
-	}    ,{
-            "path" : "pages/mine/bills/bills",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/mine/reserve/reserve",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/map/map",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/mine/bills/bills",
+		"style": {
+			"navigationBarTitleText": "订 单 信 息",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/mine/reserve/reserve",
+		"style": {
+			"navigationBarTitleText": "预 定",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/map/map",
+		"style": {
+			"navigationBarTitleText": "智 慧 停 车 小 程 序",
+			"enablePullDownRefresh": false
+		}
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

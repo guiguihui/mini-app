@@ -1,5 +1,9 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "智 慧 停 车 小 程 序",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-search-bar": "/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar",
+    "uni-card": "/components/uni-card/uni-card",
+    "drag-button": "/components/drag-button"
+  }
 }

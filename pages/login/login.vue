@@ -89,7 +89,7 @@
 									});
 									setTimeout(function() {
 										wx.redirectTo({
-											url: '/pages/mine/mineTest'
+											url: '/pages/map/map'
 										})
 									}, 800) //延迟时间 
 								} else {

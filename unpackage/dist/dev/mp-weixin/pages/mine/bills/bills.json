@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "订 单 信 息",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "uni-card": "/components/uni-card/uni-card",
