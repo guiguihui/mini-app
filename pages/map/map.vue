@@ -10,9 +10,9 @@
 		<view class="scroll">
 			<scroll-view class="list-scroll-content" scroll-y>
 				<!-- 停车场列表 -->
-				<view v-for="(item,index) in parking" :key="index" class="order-item">
-					<uni-card class="uni-card" :title="items[index]">
-						<view class="uni-body">`
+				<view v-for="(item,index) in parking" :key="index" class="order-item" @click="itemCilck(item,index)">
+					<card class="uni-card" :title="items[index]">
+						<view class="uni-body">
 							<text class="uni-title">停车场名称</text>
 							<text class="uni-data">{{parking[index].parkingName}}</text>
 						</view>
@@ -24,7 +24,7 @@
 							<text class="uni-title">停车收费标准</text>
 							<text class="uni-data">{{parking[index].parkingFee}}</text>
 						</view>
-					</uni-card>
+					</card>
 				</view>
 			</scroll-view>
 		</view>
@@ -36,9 +36,11 @@
 </template>
 <script>
 	import dragButton from '../../components/drag-button.vue';
+	import card from '../../components/uni-card/uni-card.vue';
 	export default {
 		components: {
 			dragButton,
+			card,
 		},
 		data() {
 			return {
@@ -87,6 +89,8 @@
 									latitude: res.data.data[i].parkingLatitude,
 									longitude: res.data.data[i].parkingLongitude,
 									title: res.data.data[i].parkingName,
+									width: "20",
+									height: "20",
 									callout: {
 										content: res.data.data[i].parkingName,
 										padding: 10,
@@ -106,7 +110,7 @@
 					}
 				})
 			},
-
+			/*搜索点击事件*/
 			search(res) {
 				var _this = this;
 				wx.request({
@@ -131,6 +135,16 @@
 					}
 				})
 			},
+			/*停车场卡片点击事件*/
+			itemCilck(res) {
+				wx.navigateTo({
+					url: '/pages/parkingInfo/parkingInfo?parkingId=' + res.parkingId + '&parkingName=' + res
+						.parkingName + '&parkingAddress=' + res.parkingAddress + '&parkingSpace=' + res
+						.parkingSpace + '&parkingAvailable=' + res.parkingAvailable + '&parkingFee=' + res
+						.parkingFee,
+					// url: './add/add?id=' + project_id + '&name=' + project_names
+				});
+			}
 		},
 		onBackPress() {
 			// #ifdef APP-PLUS
@@ -159,7 +173,9 @@
 		bottom: 0;
 		z-index: 99;
 		position: fixed;
+
 	}
+
 
 	.uni-title {
 		display: inline-block;

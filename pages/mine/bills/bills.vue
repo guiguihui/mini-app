@@ -3,7 +3,7 @@
 		<scroll-view class="list-scroll-content" scroll-y>
 			<!-- 订单列表 -->
 			<view v-for="(item,index) in bills" :key="index" class="order-item">
-				<uni-card class="uni-card" :title="items[index]">
+				<uCard class="uni-card" :title="items[index]">
 
 					<view class="uni-body">
 						<text class="uni-title">订单编号</text>
@@ -44,7 +44,7 @@
 						<text class="uni-title">总费用</text>
 						<text class="uni-data">{{bills[index].reserveFee + bills[index].billFee}}</text>
 					</view>
-				</uni-card>
+				</uCard>
 			</view>
 
 		</scroll-view>

@@ -39,10 +39,7 @@ var components
 try {
   components = {
     uniSearchBar: function() {
-      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 126))
-    },
-    uniCard: function() {
-      return __webpack_require__.e(/*! import() | components/uni-card/uni-card */ "components/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @/components/uni-card/uni-card.vue */ 106))
+      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 119))
     }
   }
 } catch (e) {
@@ -99,7 +96,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var dragButton = function dragButton() {__webpack_require__.e(/*! require.ensure | components/drag-button */ "components/drag-button").then((function () {return resolve(__webpack_require__(/*! ../../components/drag-button.vue */ 147));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var dragButton = function dragButton() {__webpack_require__.e(/*! require.ensure | components/drag-button */ "components/drag-button").then((function () {return resolve(__webpack_require__(/*! ../../components/drag-button.vue */ 130));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | components/uni-card/uni-card */ "components/uni-card/uni-card").then((function () {return resolve(__webpack_require__(/*! ../../components/uni-card/uni-card.vue */ 112));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
 
 
 
@@ -139,7 +137,8 @@ __webpack_require__.r(__webpack_exports__);
 
 {
   components: {
-    dragButton: dragButton },
+    dragButton: dragButton,
+    card: card },
 
   data: function data() {
     return {
@@ -188,6 +187,8 @@ __webpack_require__.r(__webpack_exports__);
                 latitude: res.data.data[i].parkingLatitude,
                 longitude: res.data.data[i].parkingLongitude,
                 title: res.data.data[i].parkingName,
+                width: "20",
+                height: "20",
                 callout: {
                   content: res.data.data[i].parkingName,
                   padding: 10,
@@ -207,7 +208,7 @@ __webpack_require__.r(__webpack_exports__);
         } });
 
     },
-
+    /*搜索点击事件*/
     search: function search(res) {
       var _this = this;
       wx.request({
@@ -231,6 +232,16 @@ __webpack_require__.r(__webpack_exports__);
 
         } });
 
+    },
+    /*停车场卡片点击事件*/
+    itemCilck: function itemCilck(res) {
+      wx.navigateTo({
+        url: '/pages/parkingInfo/parkingInfo?parkingId=' + res.parkingId + '&parkingName=' + res.
+        parkingName + '&parkingAddress=' + res.parkingAddress + '&parkingSpace=' + res.
+        parkingSpace + '&parkingAvailable=' + res.parkingAvailable + '&parkingFee=' + res.
+        parkingFee
+        // url: './add/add?id=' + project_id + '&name=' + project_names
+      });
     } },
 
   onBackPress: function onBackPress() {

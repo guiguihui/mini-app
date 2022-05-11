@@ -11,7 +11,8 @@
     "pages/mine/about/about",
     "pages/mine/bills/bills",
     "pages/mine/reserve/reserve",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/parkingInfo/parkingInfo"
   ],
   "subPackages": [],
   "window": {
@@ -21,9 +22,8 @@
     "backgroundColor": "#F8F8F8"
   },
   "permission": {
-    "scope.userLocation": {
-      "desc": "您的位置信息用于快速录入检查地点"
-    }
-  },
-  "usingComponents": {}
+     "scope.userLocation": {
+       "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+     }
+   }
 }

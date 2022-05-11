@@ -75,7 +75,16 @@
 			"navigationBarTitleText": "智 慧 停 车 小 程 序",
 			"enablePullDownRefresh": false
 		}
-	}],
+	}    ,{
+            "path" : "pages/parkingInfo/parkingInfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

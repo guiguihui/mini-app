@@ -50,6 +50,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/parkingInfo/parkingInfo",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
