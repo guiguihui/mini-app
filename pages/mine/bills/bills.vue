@@ -96,6 +96,7 @@
 									for (var i = 0; i < res.data.length; i++) {
 										res.data[i].billStart = _this.getTime(res.data[i].billStart);
 										res.data[i].billEnd = _this.getTime(res.data[i].billEnd);
+										/*把停车场id转化为停车场名称s*/
 										wx.request({
 											url: 'http://localhost:80/parkings/' + res.data[i]
 												.parkingId,

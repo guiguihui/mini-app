@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uCard = function uCard() {__webpack_require__.e(/*! require.ensure | components/uni-card/uni-card */ "components/uni-card/uni-card").then((function () {return resolve(__webpack_require__(/*! @/components/uni-card/uni-card.vue */ 112));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uCard = function uCard() {__webpack_require__.e(/*! require.ensure | components/uni-card/uni-card */ "components/uni-card/uni-card").then((function () {return resolve(__webpack_require__(/*! @/components/uni-card/uni-card.vue */ 114));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -228,6 +228,7 @@ __webpack_require__.r(__webpack_exports__);
                 for (var i = 0; i < res.data.length; i++) {
                   res.data[i].billStart = _this.getTime(res.data[i].billStart);
                   res.data[i].billEnd = _this.getTime(res.data[i].billEnd);
+                  /*把停车场id转化为停车场名称s*/
                   wx.request({
                     url: 'http://localhost:80/parkings/' + res.data[i].
                     parkingId,

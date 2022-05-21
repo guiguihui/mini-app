@@ -96,7 +96,7 @@ var components
 try {
   components = {
     uniCard: function() {
-      return __webpack_require__.e(/*! import() | components/uni-card/uni-card */ "components/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @/components/uni-card/uni-card.vue */ 112))
+      return __webpack_require__.e(/*! import() | components/uni-card/uni-card */ "components/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @/components/uni-card/uni-card.vue */ 114))
     }
   }
 } catch (e) {
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uCard = function uCard() {__webpack_require__.e(/*! require.ensure | components/uni-card/uni-card */ "components/uni-card/uni-card").then((function () {return resolve(__webpack_require__(/*! @/components/uni-card/uni-card.vue */ 112));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uCard = function uCard() {__webpack_require__.e(/*! require.ensure | components/uni-card/uni-card */ "components/uni-card/uni-card").then((function () {return resolve(__webpack_require__(/*! @/components/uni-card/uni-card.vue */ 114));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

@@ -67,9 +67,15 @@
 
 		},
 		methods: {
+			dataFormat(time) {
+				return `${time.getFullYear()}${time.getMonth() + 1 >= 10 ? (time.getMonth() + 1) : '0' + (time.getMonth() + 1)}${time.getDate() >= 10 ? time.getDate() : '0' + time.getDate() }${time.getHours() >= 10 ? time.getHours() : '0' + time.getHours()}${time.getMinutes()>=10?time.getMinutes():'0'+time.getMinutes()}${time.getSeconds() >= 10 ? time.getSeconds() : '0' + time.getSeconds()}`;
+			},
 			init() {
-				var myDate = new Date();
-				console.log(myDate.toJSON())
+				/* let self = this;
+				self.timeMes = self.dataFormat(new Date())
+				console.log(self.timeMes) */
+				/* var myDate = new Date();
+				console.log(dataFormat(myDate)); */
 				/*console.log(myDate.getUTCDate());
 
 				console.log(myDate.toISOString(YYYY-MM-DD)); */
@@ -103,6 +109,8 @@
 				})
 
 			},
+			
+
 			/*点击预约*/
 			itemCilck(res) {
 				var _this = this;
@@ -114,20 +122,19 @@
 						spaceState: "占用",
 						isDeleted: 0,
 					};
-					// if(!uni.getStorageSync('isReserve')){
-					if (true) {
+					if (!uni.getStorageSync('isReserve')) {
+						/* if (true) { */
 						wx.request({
 							url: 'http://localhost:80/spaces',
 							method: 'POST',
 							data: space,
 							success(res) {
-								/*将已经预约的信息保存在缓存中*/
 								
 
 								/*创建预约单信息*/
 								var myDate = new Date();
 								var reserve = {
-									reserveId: space.spaceId + myDate.toJSON() + _this.user.userId,
+									reserveId:  _this.dataFormat(myDate) + _this.user.userId + space.spaceId,
 									parkingId: space.parkingId,
 									spaceId: space.spaceId,
 									carId: _this.user.carId,
@@ -140,6 +147,7 @@
 									data: reserve,
 									success(res) {
 										if (res.data) {
+											/*将已经预约的信息保存在缓存中*/
 											uni.setStorageSync('isReserve', true);
 											uni.showToast({
 												title: '预约成功',
@@ -195,29 +203,29 @@
 	.name {
 		margin-top: 5%;
 		font-size: 50rpx;
-		padding: 5px 0 5px 0 ;
+		padding: 5px 0 5px 0;
 	}
 
 	.address {
 		font-size: 30rpx;
-		padding: 5px 0 5px 0 ;
+		padding: 5px 0 5px 0;
 	}
 
 	.availablle {
 		font-size: 35rpx;
 		display: inline-block;
-		padding: 5px 0 5px 0 ;
+		padding: 5px 0 5px 0;
 	}
 
 	.sapce {
 		font-size: 25rpx;
 		display: inline-block;
-		padding: 5px 0 5px 0 ;
+		padding: 5px 0 5px 0;
 	}
 
 	.fee {
 		font-size: 35rpx;
-		padding: 5px 0 5px 0 ;
+		padding: 5px 0 5px 0;
 	}
 
 

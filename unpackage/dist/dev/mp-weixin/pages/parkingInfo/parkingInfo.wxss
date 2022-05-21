@@ -9,25 +9,25 @@
 .name {
 	margin-top: 5%;
 	font-size: 50rpx;
-	padding: 5px 0 5px 0 ;
+	padding: 5px 0 5px 0;
 }
 .address {
 	font-size: 30rpx;
-	padding: 5px 0 5px 0 ;
+	padding: 5px 0 5px 0;
 }
 .availablle {
 	font-size: 35rpx;
 	display: inline-block;
-	padding: 5px 0 5px 0 ;
+	padding: 5px 0 5px 0;
 }
 .sapce {
 	font-size: 25rpx;
 	display: inline-block;
-	padding: 5px 0 5px 0 ;
+	padding: 5px 0 5px 0;
 }
 .fee {
 	font-size: 35rpx;
-	padding: 5px 0 5px 0 ;
+	padding: 5px 0 5px 0;
 }
 .scroll {
 	max-height: 75%;
