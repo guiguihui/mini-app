@@ -15,7 +15,7 @@
 
 用户登录界面
 
-![image16](https://github.com/guiguihui/mini-app/blob/main/markdown-pic\image16.png?raw=true)
+![image16](https://github.com/guiguihui/mini-app/blob/main/markdown-pic/image16.png?raw=true)
 
 用户注册界面
 
